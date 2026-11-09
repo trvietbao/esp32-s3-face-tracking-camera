@@ -1,0 +1,13 @@
+CompileFlags:
+  CompilationDatabase: build
+  Remove:
+    - -m*
+    - -f*
+    - -mlongcalls
+    - -mdisable-hardware-atomics
+    - -fstrict-volatile-bitfields
+    - -fno-tree-switch-conversion
+    - -fzero-init-padding-bits=all
+    - -fno-malloc-dce
+    - -W*
+  BuiltinHeaders: QueryDriver

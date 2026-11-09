@@ -1,0 +1,23 @@
+idf_component_register(
+    SRCS 
+        "main.c"
+        "camera/camera_init.c"
+        "stream/usb_stream.c"
+        "ai/face_detect.cpp"
+        "servo/servo_control.c"
+    INCLUDE_DIRS 
+        "."
+        "camera"
+        "stream"
+        "ai"
+        "servo"
+    REQUIRES 
+        esp32-camera 
+        esp_jpeg
+        esp_new_jpeg
+        esp_timer 
+        driver
+        esp_driver_usb_serial_jtag
+        human_face_detect
+        esp-dl
+)

@@ -1,0 +1,28 @@
+# Build artifacts
+build/
+**/build/
+sdkconfig.old
+flasher_args.json
+
+# ESP-IDF Component Manager
+managed_components/
+dependencies.lock
+
+# IDE & Editor
+.vscode/
+.cache/
+.clangd/
+.kilo/
+compile_commands.json
+.devcontainer/
+
+# AI and local artifacts
+.agents/
+.geminiignore
+"esp32 s3 project/"
+
+# OS & Temporary
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

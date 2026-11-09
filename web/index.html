@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="main-layout">
+    <div class="stream-section">
+      <div class="stream-container" id="container">
+        <canvas id="view" width="240" height="240"></canvas>
+        <div class="fps-counter" id="fps">0 FPS</div>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="telemetry-panel">
+        <div class="telemetry-group">
+          <div class="group-title">1. THỜI GIAN THỰC THI</div>
+          <div class="row"><span>Giải mã JPEG -> RGB888 (Core 1):</span><span id="latJpeg">__</span></div>
+          <div class="row"><span>Suy luận AI ESP-DL (Core 1):</span><span id="latAi">__</span></div>
+          <div class="row"><span>Servo Pan trục Y - GPIO 1 (Core 0):</span><span id="latServoPan">__</span></div>
+          <div class="row"><span>Servo Tilt trục X - GPIO 2 (Core 0):</span><span id="latServoTilt">__</span></div>
+          <div class="row"><span>Truyền dữ liệu USB CDC (Core 0):</span><span id="latUsb">__</span></div>
+          <div class="row strong"><span>Tổng thời gian thực thi Core 1:</span><span id="latCore1">__</span></div>
+          <div class="row strong"><span>Tổng thời gian thực thi Core 0:</span><span id="latCore0">__</span></div>
+        </div>
+
+        <div class="telemetry-group">
+          <div class="group-title">2. TIÊU THỤ BỘ NHỚ (đo runtime)</div>
+          <div class="row"><span>Internal SRAM trống:</span><span id="statHeapInt">__</span></div>
+          <div class="row"><span>Octal PSRAM (80MHz):</span><span id="statHeapPsram">__</span></div>
+        </div>
+
+        <div class="telemetry-group">
+          <div class="group-title">3. THỐNG KÊ PHIÊN ĐO</div>
+          <div class="row"><span>Latency AI trung bình:</span><span id="statAiAvg">__</span></div>
+          <div class="row"><span>Latency AI min / max:</span><span id="statAiMinMax">__</span></div>
+          <div class="row"><span>Tỉ lệ khung có bám mục tiêu:</span><span id="statTrackRate">__</span></div>
+        </div>
+
+        <div class="telemetry-group">
+          <div class="group-title">4. ĐIỆN NĂNG &amp; PHẦN CỨNG</div>
+          <div class="row"><span>Điện áp hoạt động:</span><span>5.0V USB OTG</span></div>
+          <div class="row"><span>Băng thông truyền:</span><span id="statBandwidth">__</span></div>
+          <div class="row"><span>Khoảng cách giữa 2 khung:</span><span id="statJitter">__</span></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="btnConnect">CHỌN CỔNG COM</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
